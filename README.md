@@ -1,64 +1,64 @@
-# ElderWizz AI - Asistente de Código y Mentor de Programación
+# ElderWizz AI - Code Assistant and Programming Mentor
 
-ElderWizz AI es una aplicación web interactiva diseñada para ayudar a los desarrolladores a mejorar la calidad de su código. Utilizando el poder de la IA generativa de Google, esta herramienta analiza tu código, ofrece sugerencias de buenas prácticas y genera ejercicios de programación para que puedas mejorar tus habilidades.
+ElderWizz AI is an interactive web application designed to help developers improve the quality of their code. Using the power of Google's generative AI, this tool analyzes your code, offers suggestions for best practices, and generates programming exercises so you can improve your skills.
 
-Este proyecto fue creado con el propósito de ser una pieza de portafolio, demostrando no solo la creación de una herramienta funcional y creativa, sino también la implementación de buenas prácticas de desarrollo, arquitectura de software y seguridad.
+This project was created with the purpose of being a portfolio piece, demonstrating not only the creation of a functional and creative tool, but also the implementation of good development practices, software architecture, and security.
 
 ---
 
-### 🔗 [Enlace a la Demo en Vivo](https://elderwizz-ai.vercel.app/)
+### 🔗 [Link to Live Demo](https://elder-wizz-ai.vercel.app/)
 
 ### 📸 Screenshot
 
-![Screenshot de ElderWizz AI](/public/screenshotelderwizz.png)
+![Screenshot of ElderWizz AI](/public/screenshotelderwizz.png)
 
 ---
 
-## ✨ Características Principales
+## ✨ Main Features
 
-- **Análisis de Código Inteligente:** Pega tu código en el editor y recibe un análisis detallado sobre posibles mejoras, errores y aplicación de buenas prácticas.
-- **Ejercicios de Programación Diarios:** Genera ejercicios de programación únicos para tres niveles de dificultad: Aprendizaje, Intermedio y Avanzado.
-- **Interfaz Retro Estilo GBA:** Una interfaz de usuario creativa y amigable, inspirada en la estética de las consolas Game Boy Advance.
-- **Seguridad de la API Key:** La clave de la API de Google se gestiona de forma segura a través de un backend proxy (función serverless), evitando su exposición en el lado del cliente.
-- **Arquitectura Escalable:** El código está estructurado en componentes de React reutilizables, siguiendo un patrón de diseño limpio y mantenible.
+- **Intelligent Code Analysis:** Paste your code into the editor and receive a detailed analysis of possible improvements, errors, and application of best practices.
+- **Daily Programming Exercises:** Generate unique programming exercises for three difficulty levels: Learning, Intermediate, and Advanced.
+- **Retro GBA Style Interface:** A creative and friendly user interface, inspired by the aesthetics of Game Boy Advance consoles.
+- **API Key Security:** The Google API key is managed securely through a backend proxy (serverless function), preventing its exposure on the client side.
+- **Scalable Architecture:** The code is structured in reusable React components, following a clean and maintainable design pattern.
 
 ---
 
-## 🛠️ Stack Tecnológico
+## 🛠️ Tech Stack
 
 - **Frontend:**
-  - **React:** Biblioteca principal para la construcción de la interfaz de usuario.
-  - **Vite:** Herramienta de desarrollo frontend de alta velocidad.
-  - **TypeScript:** Para un código más robusto y mantenible.
-  - **Tailwind CSS:** Framework de CSS para un diseño rápido y personalizado.
+  - **React:** Main library for building the user interface.
+  - **Vite:** High-speed frontend development tool.
+  - **TypeScript:** For more robust and maintainable code.
+  - **Tailwind CSS:** CSS framework for fast and custom design.
 - **Backend (Serverless):**
-  - **Vercel Functions:** Funciones sin servidor para actuar como backend proxy y proteger la API key.
-  - **Node.js:** El entorno de ejecución para las funciones serverless.
-- **API de IA:**
-  - **Google Gemini API:** El modelo de lenguaje grande que potencia el análisis y la generación de contenido.
+  - **Vercel Functions:** Serverless functions to act as a backend proxy and protect the API key.
+  - **Node.js:** The runtime environment for serverless functions.
+- **AI API:**
+  - **Google Gemini API:** The large language model that powers the analysis and content generation.
 
 ---
 
-## 📂 Estructura del Proyecto
+## 📂 Project Structure
 
-El código fuente está organizado para ser modular y escalable:
+The source code is organized to be modular and scalable:
 
 ```
 /root
-├── api/                # Contiene las funciones serverless (el backend proxy)
+├── api/                # Contains the serverless functions (the backend proxy)
 │   └── generate.ts
-├── public/             # Archivos estáticos (imágenes, etc.)
+├── public/             # Static files (images, etc.)
 ├── src/
-│   ├── components/     # Componentes de React reutilizables
+│   ├── components/     # Reusable React components
 │   │   ├── CodeEditor.tsx
 │   │   ├── Exercise.tsx
 │   │   ├── Header.tsx
 │   │   ├── MarkdownRenderer.tsx
 │   │   └── Suggestions.tsx
-│   ├── App.tsx         # Componente principal que une la aplicación
-│   ├── main.tsx        # Punto de entrada de la aplicación
-│   └── index.css       # Estilos globales y de Tailwind
-├── .env.local          # Archivo para las variables de entorno (ignorado por Git)
-├── README.md           # Este archivo
-└── ...                 # Otros archivos de configuración (Vite, Tailwind, etc.)
+│   ├── App.tsx         # Main component that brings the application together
+│   ├── main.tsx        # Application entry point
+│   └── index.css       # Global and Tailwind styles
+├── .env.local          # File for environment variables (ignored by Git)
+├── README.md           # This file
+└── ...                 # Other configuration files (Vite, Tailwind, etc.)
 ```
