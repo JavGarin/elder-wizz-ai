@@ -19,7 +19,10 @@ interface GeminiCandidate {
     content: GeminiContent;
     finishReason: string;
     index: number;
-    safetyRatings: any[]; // You might want to define a more specific type for safetyRatings
+    safetyRatings: {
+        category: string;
+        probability: string;
+    }[]; // Define a more specific type for safetyRatings
 }
 
 interface GeminiResponse {
