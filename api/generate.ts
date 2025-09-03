@@ -64,7 +64,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
             if (result.response) {
                 res.status(200).json(result.response);
             } else {
-                console.error("Gemini API Error: No response from the API.");
+                console.error("Gemini API Error: No response from the API.", result);
                 res.status(500).json({ error: 'No response from Gemini API' });
             }
 

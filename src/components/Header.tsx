@@ -1,5 +1,4 @@
 import React from 'react';
-import { Github } from "lucide-react";
 
 const Header: React.FC = () => {
     return (
@@ -11,14 +10,9 @@ const Header: React.FC = () => {
                         Elder<span className="text-gba-gold">Wizz</span> AI
                     </h1>
                 </div>
-            <a
-                href="https://github.com/JavGarin/elder-wizz-ai"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gba-yellow hover:text-gba-gold transition-colors"
-            >
-                <Github size={24} />
-            </a>
+                <a href="https://github.com/JavGarin/elder-wizz-ai" target="_blank" rel="noopener noreferrer" className="text-xs text-gba-yellow hover:text-gba-gold transition-colors">
+                    GitHub
+                </a>
             </div>
         </header>
     );
