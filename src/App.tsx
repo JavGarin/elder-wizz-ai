@@ -45,7 +45,7 @@ type Difficulty = 'aprendizaje' | 'intermedio' | 'avanzado';
 // --- Main App Component ---
 
 export default function App() {
-    const initialCode = `// Pega tu código aquí...
+    const initialCode = `// Borra este ejemplo y pega tu código aquí...
 function factorial(n) {
     if (n < 0) return -1; 
     if (n == 0) return 1;
@@ -55,7 +55,7 @@ function factorial(n) {
 }
     return result;
 }`;
-
+    // --- State Variables ---
     const [code, setCode] = useState<string>(initialCode);
     const [analysisResult, setAnalysisResult] = useState<string>('');
     const [dailyExercise, setDailyExercise] = useState<string>('');
