@@ -62,3 +62,9 @@ The source code is organized to be modular and scalable:
 ├── README.md           # This file
 └── ...                 # Other configuration files (Vite, Tailwind, etc.)
 ```
+
+---
+
+## ✍️ Author
+
+- **Dev Javier Garin**
