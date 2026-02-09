@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Header from './components/Header';
+import NotificationBanner from './components/NotificationBanner';
 import CodeEditor from './components/CodeEditor';
 import Suggestions from './components/Suggestions';
 import Exercise from './components/Exercise';
@@ -160,6 +161,7 @@ ${code}
 
     return (
         <div className="bg-gba-deep-brown text-gba-light-yellow min-h-screen font-vt323 flex flex-col">
+            <NotificationBanner />
             <Header />
 
             {/* Main Content */}
