@@ -46,16 +46,25 @@ type Difficulty = 'aprendizaje' | 'intermedio' | 'avanzado';
 // --- Main App Component ---
 
 export default function App() {
-    const initialCode = `// Borra este ejemplo y pega tu código aquí...
-function factorial(n) {
-    if (n < 0) return -1; 
-    if (n == 0) return 1;
-    var result = 1;
-    for(var i=n; i > 0; i--){
-    result = result * i;
-}
-    return result;
-}`;
+    const initialCode = `// Ejemplo Moderno 2026: Procesamiento de Datos
+const processUserList = (users) => {
+  const MIN_AGE = 18;
+
+  // Filtrar y transformar usando métodos inmutables
+  return users
+    .filter(({ age }) => age >= MIN_AGE)
+    .map(({ name, email }) => ({
+      displayName: name.trim().toUpperCase(),
+      contact: email.toLowerCase()
+    }));
+};
+
+const rawData = [
+  { name: "  Ana García  ", age: 25, email: "ANA@GMAIL.COM" },
+  { name: "Pedro", age: 16, email: "pedro@test.com" }
+];
+
+console.log(processUserList(rawData));`;
     // --- State Variables ---
     const [code, setCode] = useState<string>(initialCode);
     const [analysisResult, setAnalysisResult] = useState<string>('');
@@ -145,18 +154,36 @@ ${code}
         setIsLoadingExercise(true);
         setDailyExercise('');
 
-        const prompt = `Genera un único ejercicio de programación para un desarrollador de nivel '${difficulty}'...`; // Same prompt as before
+        // Simular retraso de API
+        await new Promise(resolve => setTimeout(resolve, 1500));
+
+        const exercises = {
+            'aprendizaje': `## Ejercicio: Variables y Consola
+Crea dos variables: \`nombre\` con tu nombre y \`edad\` con tu edad.
+Luego, imprime en la consola un mensaje que diga:
+'Hola, soy [nombre] y tengo [edad] años.'
+
+**Pista:** Usa \`console.log\` y template literals (comillas invertidas \` \`).`,
+            'intermedio': `## Ejercicio: Filtrado de Arrays
+Dado el siguiente array de números: \`const numeros = [5, 12, 8, 130, 44];\`
+Crea una nueva variable llamada \`mayoresQueDiez\` que contenga solo los números mayores a 10.
+Imprime el resultado.
+
+**Pista:** Investiga el método \`.filter()\`.`,
+            'avanzado': `## Ejercicio: Promesas Simples
+Crea una función llamada \`esperar\` que reciba un número de milisegundos.
+Esta función debe retornar una Promesa que se resuelva después de ese tiempo.
+Usa \`async/await\` para llamar a la función y mostrar '¡Listo!' en la consola cuando termine.
+
+**Pista:** Usa \`setTimeout\` dentro de la Promesa.`
+        };
+
+        const result = exercises[difficulty];
         
-        try {
-            const result = await callGeminiAPI(prompt);
-            setDailyExercise(result);
-            const newCache: ExerciseCache = { date: today, exercise: result };
-            localStorage.setItem(`exercise_${difficulty}`, JSON.stringify(newCache));
-        } catch {
-            // Error is handled in callGeminiAPI
-        } finally {
-            setIsLoadingExercise(false);
-        }
+        setDailyExercise(result);
+        const newCache: ExerciseCache = { date: today, exercise: result };
+        localStorage.setItem(`exercise_${difficulty}`, JSON.stringify(newCache));
+        setIsLoadingExercise(false);
     };
 
     return (
